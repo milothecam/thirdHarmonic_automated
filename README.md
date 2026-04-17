@@ -8,9 +8,12 @@ The script harmonic_measurement.py performs measurements using a signal generato
 It will save csv files around the measured tones, to be used for further analysis.
 
 The script harmonic_analysis_corrections_threeS2P.py is the current version of the analysis script. It plots the maximum power of all the saved csv files grouped by frequency from the signal generator tone and respective harmonic.
-
+Corrections to the values the instruments read to generate the input tone and reading the power at the output are performed following the schematic ahead:
 ![title](Images/example.png)
-
+where:
+loss(f) = 0.5 * [S2P_CRYO_IN_OUT(f) - ATT_in]
+P_TKIP_IN = P_GEN + S2P_PUMP_LINE(f) + S2P_PUMP_IN(f) + 0.5*ATT_in - 0.5*S2P_CRYO_IN_OUT(f)
+P_TKIP_OUT = P_out - loss(f*h)
 
 ## Requirements
 - Python 3.x

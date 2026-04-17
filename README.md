@@ -11,9 +11,11 @@ The script harmonic_analysis_corrections_threeS2P.py is the current version of t
 Corrections to the values the instruments read to generate the input tone and reading the power at the output are performed following the schematic ahead:
 ![title](Images/example.png)
 where:
-loss(f) = 0.5 * [S2P_CRYO_IN_OUT(f) - ATT_in]
+```
+loss(f) = 0.5 * [S2P_CRYO_IN_OUT(f) - ATT_in] 
 P_TKIP_IN = P_GEN + S2P_PUMP_LINE(f) + S2P_PUMP_IN(f) + 0.5*ATT_in - 0.5*S2P_CRYO_IN_OUT(f)
 P_TKIP_OUT = P_out - loss(f*h)
+```
 
 ## Requirements
 - Python 3.x

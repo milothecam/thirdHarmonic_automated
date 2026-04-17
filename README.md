@@ -9,8 +9,7 @@ It will save csv files around the measured tones, to be used for further analysi
 
 The script harmonic_analysis_corrections_threeS2P.py is the current version of the analysis script. It plots the maximum power of all the saved csv files grouped by frequency from the signal generator tone and respective harmonic.
 
-![alt text](C:\Users\cespinoz\Documents\Desktop\scriptsForWork\thirdHarmonic_automated\schematicNow.png "Title")
-
+![image info](C:\Users\cespinoz\Documents\Desktop\scriptsForWork\thirdHarmonic_automated\schematicNow.png "Title")
 
 ## Requirements
 - Python 3.x

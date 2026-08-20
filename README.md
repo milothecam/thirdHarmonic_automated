@@ -4,10 +4,10 @@
 These files are used to calculate the power at the input and output of a TKIP while measuring the generation of harmonics in it. The calculations are still to be verified and different approaches are being tested at the moment. To be updated.
 
 ## How to run
-The script harmonic_measurement.py performs measurements using a signal generator and a VNA under Test Receiver mode (TR. Reading of signals with no output power from other ports of the VNA). The script harmonic_measurement_wSA.py performs the same tasks but using a spectrum analyzer instead of the VNA under TR mode. This is useful (in general, more accurate) for being able to measure signals surpassing a lower noise floor.
+The script `harmonic_measurement.py` performs measurements using a signal generator and a VNA under Test Receiver mode (TR. Reading of signals with no output power from other ports of the VNA). The script `harmonic_measurement_wSA.py` performs the same tasks but using a spectrum analyzer instead of the VNA under TR mode. This is useful (in general, more accurate) for being able to measure signals surpassing a lower noise floor.
 It will save csv files around the measured tones, to be used for further analysis.
 
-The script harmonic_analysis_corrections_threeS2P.py is the current version of the analysis script. It plots the maximum power of all the saved csv files grouped by frequency from the signal generator tone and respective harmonic.
+The script `harmonic_analysis_corrections_threeS2P.py` is the current version of the analysis script. It plots the maximum power of all the saved csv files grouped by frequency from the signal generator tone and respective harmonic.
 Corrections to the values the instruments read to generate the input tone and reading the power at the output are performed following the schematic ahead:
 ![title](Images/example.png)
 
@@ -38,3 +38,6 @@ FILE_PREFIX   = "harmAuto"
 
 ## Notes
 The power correction at the moment is not exact - it works under many assumptions. The components of the system are hard to individually characterize. The superconducting cables can only be characterized in cold. A better approach to perform these corrections could be achieved.
+
+## Very important note!
+The script `harmonicGeneration_wCorrection.py` was seen to be delivering the best correction for losses among the documented. This is only an analysis script: it does not perform measurements and only analyzes already existing data. It would be good to dedicate some time and unify these corrections in the more properly automated scripts: note that `harmonicGeneration_wCorrection.py` uses as input all the files to be used for plotting. Also, note that the Bluefors cryostat has been deteriorating in terms of S21 of the RF paths lately (August 2026), so the corrections may need to be adjusted (though they shouldn't). 
